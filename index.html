@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>zhouyuzhouyu · 个人主页</title>
+  <meta name="description" content="zhouyuzhouyu 的个人主页" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=Noto+Sans+SC:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="bg" aria-hidden="true"></div>
+  <header class="nav">
+    <a class="logo" href="#top">ZY</a>
+    <nav>
+      <a href="#about">关于</a>
+      <a href="#work">作品</a>
+      <a href="#contact">联系</a>
+    </nav>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <p class="eyebrow">Hello · 你好</p>
+      <h1>我是 <span>zhouyuzhouyu</span></h1>
+      <p class="lede">喜欢写代码、做产品。这里是我的个人主页——简洁、直接，留下你想说的话。</p>
+      <div class="actions">
+        <a class="btn primary" href="https://github.com/zhouyuzhouyu" target="_blank" rel="noopener">GitHub</a>
+        <a class="btn ghost" href="#contact">联系我</a>
+      </div>
+    </section>
+
+    <section id="about" class="card-grid">
+      <article class="card">
+        <h2>关于我</h2>
+        <p>长期关注软件工程与产品体验。把复杂问题拆清楚，用清晰的方案落地。</p>
+      </article>
+      <article class="card">
+        <h2>现在在做</h2>
+        <p>写代码、管项目、打磨个人作品。有想法欢迎一起聊聊。</p>
+      </article>
+      <article class="card">
+        <h2>兴趣</h2>
+        <ul>
+          <li>Web 与全栈开发</li>
+          <li>产品与交互设计</li>
+          <li>开源与工具链</li>
+        </ul>
+      </article>
+    </section>
+
+    <section id="work" class="work">
+      <h2>精选作品</h2>
+      <div class="work-list">
+        <a class="work-item" href="https://github.com/zhouyuzhouyu" target="_blank" rel="noopener">
+          <span class="tag">GitHub</span>
+          <h3>开源仓库</h3>
+          <p>在 GitHub 上持续更新项目与实验。</p>
+        </a>
+        <div class="work-item muted">
+          <span class="tag">Coming soon</span>
+          <h3>更多作品</h3>
+          <p>后续会把代表性项目放在这里。</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="contact">
+      <h2>联系</h2>
+      <p>想合作或随便聊，欢迎通过 GitHub 找到我。</p>
+      <a class="btn primary" href="https://github.com/zhouyuzhouyu" target="_blank" rel="noopener">打开 GitHub 主页</a>
+    </section>
+  </main>
+
+  <footer>
+    <p>© <span id="year"></span> zhouyuzhouyu · 托管于 GitHub Pages</p>
+  </footer>
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>

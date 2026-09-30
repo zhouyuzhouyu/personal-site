@@ -1,0 +1,177 @@
+:root {
+  --bg: #0b1020;
+  --fg: #e8edf7;
+  --muted: #9aa6bf;
+  --card: rgba(255, 255, 255, 0.06);
+  --stroke: rgba(255, 255, 255, 0.12);
+  --accent: #7aa2ff;
+  --accent-2: #b08cff;
+  --radius: 18px;
+  --shadow: 0 20px 60px rgba(0, 0, 0, 0.35);
+  font-family: "DM Sans", "Noto Sans SC", system-ui, sans-serif;
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  color: var(--fg);
+  background: var(--bg);
+  line-height: 1.6;
+  min-height: 100vh;
+}
+
+.bg {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  background:
+    radial-gradient(900px 500px at 10% -10%, rgba(122, 162, 255, 0.35), transparent 60%),
+    radial-gradient(800px 480px at 90% 0%, rgba(176, 140, 255, 0.28), transparent 55%),
+    radial-gradient(700px 500px at 50% 100%, rgba(80, 200, 180, 0.12), transparent 50%),
+    var(--bg);
+}
+
+.nav {
+  max-width: 980px;
+  margin: 0 auto;
+  padding: 22px 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.logo {
+  width: 40px;
+  height: 40px;
+  border-radius: 12px;
+  display: grid;
+  place-items: center;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  color: white;
+  text-decoration: none;
+  background: linear-gradient(135deg, var(--accent), var(--accent-2));
+  box-shadow: var(--shadow);
+}
+.nav a { color: var(--muted); text-decoration: none; margin-left: 18px; font-weight: 500; }
+.nav a:hover { color: var(--fg); }
+
+main { max-width: 980px; margin: 0 auto; padding: 24px 24px 80px; }
+
+.hero { padding: 48px 0 28px; }
+.eyebrow {
+  display: inline-block;
+  margin: 0 0 14px;
+  padding: 6px 12px;
+  border-radius: 999px;
+  border: 1px solid var(--stroke);
+  background: var(--card);
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+h1 {
+  margin: 0 0 16px;
+  font-size: clamp(2.4rem, 6vw, 3.6rem);
+  line-height: 1.15;
+  letter-spacing: -0.03em;
+}
+h1 span {
+  background: linear-gradient(120deg, var(--accent), var(--accent-2));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+.lede { max-width: 36rem; color: var(--muted); font-size: 1.1rem; margin: 0 0 28px; }
+.actions { display: flex; gap: 12px; flex-wrap: wrap; }
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 18px;
+  border-radius: 999px;
+  text-decoration: none;
+  font-weight: 600;
+  border: 1px solid transparent;
+  transition: transform 0.15s ease, background 0.15s ease, border-color 0.15s ease;
+}
+.btn:hover { transform: translateY(-1px); }
+.btn.primary {
+  color: #081018;
+  background: linear-gradient(135deg, #c9d8ff, #e2d4ff);
+}
+.btn.ghost {
+  color: var(--fg);
+  border-color: var(--stroke);
+  background: var(--card);
+}
+
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  margin: 36px 0;
+}
+.card {
+  background: var(--card);
+  border: 1px solid var(--stroke);
+  border-radius: var(--radius);
+  padding: 22px;
+  backdrop-filter: blur(10px);
+  box-shadow: var(--shadow);
+}
+.card h2, .work h2, .contact h2 {
+  margin: 0 0 10px;
+  font-size: 1.15rem;
+  letter-spacing: -0.02em;
+}
+.card p, .card li, .work p, .contact p { color: var(--muted); margin: 0; }
+.card ul { padding-left: 1.1rem; margin: 0; }
+
+.work { margin: 48px 0; }
+.work-list { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 16px; }
+.work-item {
+  display: block;
+  padding: 22px;
+  border-radius: var(--radius);
+  border: 1px solid var(--stroke);
+  background: var(--card);
+  text-decoration: none;
+  color: inherit;
+  transition: border-color 0.15s ease, transform 0.15s ease;
+}
+.work-item:hover { border-color: rgba(122, 162, 255, 0.45); transform: translateY(-2px); }
+.work-item.muted { opacity: 0.75; }
+.work-item h3 { margin: 8px 0; }
+.tag {
+  display: inline-block;
+  font-size: 0.78rem;
+  color: var(--accent);
+  border: 1px solid rgba(122, 162, 255, 0.35);
+  border-radius: 999px;
+  padding: 3px 10px;
+}
+
+.contact {
+  margin-top: 24px;
+  padding: 28px;
+  border-radius: calc(var(--radius) + 4px);
+  border: 1px solid var(--stroke);
+  background:
+    linear-gradient(180deg, rgba(122, 162, 255, 0.12), transparent 60%),
+    var(--card);
+}
+.contact .btn { margin-top: 18px; }
+
+footer {
+  max-width: 980px;
+  margin: 0 auto;
+  padding: 0 24px 40px;
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+@media (max-width: 800px) {
+  .card-grid, .work-list { grid-template-columns: 1fr; }
+  .nav nav a:first-child { margin-left: 0; }
+}
